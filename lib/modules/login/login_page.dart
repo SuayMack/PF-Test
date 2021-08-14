@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-
 import '../../shared/themes/app_colors.dart';
 import '../../shared/themes/app_images.dart';
 import '../../shared/themes/app_text_styles.dart';
-//import '../../shared/widgets/social_login_button/social_login_button.dart';
-// import 'login_controller.dart';
+import '../../shared/widgets/social_login_button/social_login_button.dart';
+//import 'login_controller.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -40,7 +39,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             Positioned(
-              bottom: size.height * 0.05,
+              bottom: size.height * 0.08,
               left: 0,
               right: 0,
               child: Column(
@@ -49,19 +48,21 @@ class _LoginPageState extends State<LoginPage> {
                 children: [
                   Image.asset(AppImages.logomini),
                   Padding(
-                    padding: const EdgeInsets.fromLTRB(70, 30, 70, 0),
+                    padding: const EdgeInsets.fromLTRB(50, 40, 50, 20),
                     child: Text(
-                      'Organize your tickets in one place',
+                      'Organize your bills in one place',
                       textAlign: TextAlign.center,
                       style: AppTextStyles.titleHome,
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.fromLTRB(40, 40, 40, 0),
-                    //child: SocialLoginButton(
-                    //  onTap: () => controller.googleSignIn(context),
-                  ),
-                  //)
+                    child: SocialLoginButton(onTap: () {
+                      print("clicou");
+                    }
+                        // => controller.googleSignIn(context),
+                        ),
+                  )
                 ],
               ),
             )

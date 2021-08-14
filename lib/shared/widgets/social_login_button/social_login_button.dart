@@ -1,8 +1,10 @@
-import 'package:flutter/material.dart';
+import 'dart:ui';
 
-import '/../shared/themes/app_colors.dart';
+import 'package:flutter/material.dart';
+import 'package:payflow/shared/themes/app_colors.dart';
+
 import '/../shared/themes/app_images.dart';
-import '/../shared/themes/app_text_styles.dart';
+import 'package:payflow/shared/themes/app_text_styles.dart';
 
 class SocialLoginButton extends StatelessWidget {
   final VoidCallback onTap;
@@ -36,7 +38,7 @@ class SocialLoginButton extends StatelessWidget {
               child: Align(
                 alignment: Alignment.center,
                 child: Text(
-                  'Enter with Google', 
+                  'Enter with Google',
                   style: AppTextStyles.buttonGrey,
                 ),
               ),
