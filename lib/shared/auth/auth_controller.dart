@@ -9,6 +9,7 @@ class AuthController {
 
   void setUser(BuildContext context, UserModel? user) {
     if (user != null) {
+      saveUser(user);
       _user = user;
       Navigator.pushReplacementNamed(context, "/home");
     } else {
@@ -24,6 +25,7 @@ class AuthController {
 
   Future<void> currentUser(BuildContext context) async {
     final instance = await SharedPreferences.getInstance();
+    await Future.delayed(Duration(seconds: 2));
     if (instance.containsKey("user")) {
       final json = instance.get("user") as String;
       setUser(context, UserModel.fromJson(json));
